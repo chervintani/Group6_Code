@@ -24,15 +24,22 @@
     <h5>Powered by:</h5>
     <img src="https://mosquitto.org/images/mosquitto-text-side-28.png" border="0" alt="Null">
     <br><br>
+
+    <!-- you can use this button for selecting either automatic or manual switch -->
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+    <!-- end here -->
     <div class="container">
-        <center><br>
-          <div class="card" id="card">
-            <div class="card-header" style="background: #39ad39; color: white">Office</div>
-            <div class="card-body">
-              <h5>Teacher: Mr. Jun Rey Ansing</h5>
-            </div>
+      <center><br>
+        <div class="card" id="card">
+          <div class="card-header" style="background: #39ad39; color: white">Office</div>
+          <div class="card-body">
+            <h5>Teacher: Mr. Jun Rey Ansing</h5>
           </div>
-          </center><br>
+        </div>
+      </center><br>
       <div class="row" id="blockTitle">
         <h3><b>Block 1</b></h3>
       </div>
@@ -40,37 +47,87 @@
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">C#</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual1" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual1">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="card col">
-            <div class="card-header" style="background: #428eff; color: white">Seed</div>
-            <div class="card-body">
-              <h5>Temperature:</h5>
-              <h6 id="yot">12354.12</h6>
+          <div class="card-header" style="background: #428eff; color: white">Seed</div>
+          <div class="card-body">
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual2" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual2">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
             </div>
           </div>
+        </div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Fortran</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual3" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual3">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="w-100"></div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Elixir</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual4" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual4">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Ubercode</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual5" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual5">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -82,30 +139,70 @@
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Haiku</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual6" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual6">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Trojan</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual7" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual7">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="w-100"></div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Fedora</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual8" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual8">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Bash</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual9" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual9">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -117,30 +214,70 @@
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Solaris</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual10" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual10">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Zapier</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual11" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual11">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="w-100"></div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Macintosh</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual12" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual12">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Oracle</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual13" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual13">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -152,30 +289,70 @@
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Xamarin</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual14" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual14">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Sympl</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual15" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual15">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="w-100"></div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">QT Script</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual16" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual16">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="card col">
           <div class="card-header" style="background: #428eff; color: white">Lynx</div>
           <div class="card-body">
-            <h5>Temperature:</h5>
-            <h6 id="yot">12354.12</h6>
+            <h5>Automated:</h5>
+            <label class="switch">
+              <input type="checkbox" id="showManual17" checked>
+              <span class="slider round"></span>
+            </label>
+            <div id="manual17">
+              <h5>Manual mode:</h5>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
         </div>
       </div>
@@ -201,3 +378,25 @@
 <script src="./scripts/controller.js"></script>
 
 </html>
+<script>
+  let active
+  var inc = 1
+  var inc2 = 1
+  $(document).ready(function () {
+    for (var i = 0; i < 17; i++) {
+      $('#manual' + inc).hide()
+      ++inc
+    }
+    $('#showManual1').click(function () {
+      active = !active;   //useless
+      $('#manual1').toggle();
+    });
+
+    for (var i = 0; i < 17; i++) {
+      // if($('#showManual'+inc2))
+      console.log(i)
+    }
+    
+
+  });
+</script>
