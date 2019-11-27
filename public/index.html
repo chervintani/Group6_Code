@@ -24,13 +24,17 @@
     <h5>Powered by:</h5>
     <img src="https://mosquitto.org/images/mosquitto-text-side-28.png" border="0" alt="Null">
     <br><br>
-
-    <!-- you can use this button for selecting either automatic or manual switch -->
-    <label class="switch">
-      <input type="checkbox" checked>
-      <span class="slider round"></span>
-    </label>
-    <!-- end here -->
+    <center>
+        <div class="card">
+          <div class="card-body">
+            This application is an automated light switch with light detector, where it has features <br>of turning off a light automatically if the light sensor detects a light.
+          </div>
+        </div>
+      </center><br>
+    <div class="alert alert-danger" role="alert">
+      <i>Note: </i>You can turn off automated to manually operate the light switch in case of emergency.
+    </div>
+    
     <div class="container">
       <center><br>
         <div class="card" id="card">
@@ -376,10 +380,10 @@
   crossorigin="anonymous"></script>
 <script src="./scripts/browser-mqtt.js"></script>
 <script src="./scripts/controller.js"></script>
+<script src="scripts/onclick.js"></script>
 
 </html>
 <script>
-  let active
   var inc = 1
   var inc2 = 1
   $(document).ready(function () {
@@ -387,16 +391,6 @@
       $('#manual' + inc).hide()
       ++inc
     }
-    $('#showManual1').click(function () {
-      active = !active;   //useless
-      $('#manual1').toggle();
-    });
-
-    for (var i = 0; i < 17; i++) {
-      // if($('#showManual'+inc2))
-      console.log(i)
-    }
-    
 
   });
 </script>
