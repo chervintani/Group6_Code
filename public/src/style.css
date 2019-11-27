@@ -1,0 +1,85 @@
+body {
+    font-family: 'Comfortaa';
+}
+
+#header {
+  text-decoration: none;
+}
+.navbar-text {
+  color: white;
+}
+
+/* @media (min-width:34em) {
+  .card-deck > .card
+  {
+      height: 29%;
+      width: 14%;
+      flex-wrap: wrap;
+      flex: initial; 
+  }
+} */
+table, th, td {
+  border: 1px solid black;
+}
+
+.card {
+  width: 90%;
+}
+
+#card {
+  width: 50%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+h2 {
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+#block1 {
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 5%;
+}
+#block2 {
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 5%;
+}
+#block3 {
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 5%;
+}
+#block4 {
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 5%;
+}
+
+#blockTitle {
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-width: 0.4px;
+  display: block;
+  text-align: center;
+  padding: 3px
+}
+
+/* .mh-100 {
+    min-height: 100vh;
+} */
