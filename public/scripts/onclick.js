@@ -1,9 +1,12 @@
 $(document).ready(function () {
+    
+    $('#alert').hide();
 
     $('#showManual1').click(function () {
         $('#manual1').toggle();
     });
 
+    
     $('#showManual2').click(function () {
         $('#manual2').toggle();
     });

@@ -3,7 +3,8 @@
 <head>
   <title>ChervMOWS</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
   <script src="https://kit.fontawesome.com/a1813e4a30.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,10 @@
   <!-- Image and text -->
   <nav class="navbar navbar-dark bg-primary sticky-top">
     <a href="#" id="header">
-      <h2><b>MQTT over Web Socket</h2>
+      <h2>
+        <img src="https://www.passerellesnumeriques.org/wp-content/uploads/2016/03/pn-logo.png" style="width:60px">
+        &nbsp;<b>Automated Light Switch
+      </h2>
     </a>
   </nav>
   <div class="jumbotron text-center">
@@ -25,25 +29,28 @@
     <img src="https://mosquitto.org/images/mosquitto-text-side-28.png" border="0" alt="Null">
     <br><br>
     <center>
-        <div class="card">
-          <div class="card-body">
-            This application is an automated light switch with light detector, where it has features <br>of turning off a light automatically if the light sensor detects a light.
-          </div>
+      <div class="card">
+        <div class="card-body">
+          This application is an automated light switch with light detector, where it has features <br>of turning off a
+          light automatically if the light sensor detects a light.
         </div>
-      </center><br>
-    <div class="alert alert-danger" role="alert">
+      </div>
+    </center><br>
+    <div class="alert alert-primary" role="alert">
       <i>Note: </i>You can turn off automated to manually operate the light switch in case of emergency.
     </div>
-    
     <div class="container">
       <center><br>
         <div class="card" id="card">
-          <div class="card-header" style="background: #39ad39; color: white">Office</div>
+          <div class="card-header" style="background: #39ad39; color: white">Educator's Office</div>
           <div class="card-body">
-            <h5>Teacher: Mr. Jun Rey Ansing</h5>
+            <h5>Educator in charge</h5>
           </div>
         </div>
       </center><br>
+      <div class="alert alert-danger" role="alert" id="alert">
+          Room <span id="roomAlert">C#</span> light is open!
+        </div>
       <div class="row" id="blockTitle">
         <h3><b>Block 1</b></h3>
       </div>
@@ -53,13 +60,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual1" checked>
+              <input type="checkbox" id="showManual1" value="C#">
               <span class="slider round"></span>
             </label>
             <div id="manual1">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox" id="manualC" value="manual C#">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -70,13 +77,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual2" checked>
+              <input type="checkbox" id="showManual2">
               <span class="slider round"></span>
             </label>
             <div id="manual2">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -87,13 +94,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual3" checked>
+              <input type="checkbox" id="showManual3">
               <span class="slider round"></span>
             </label>
             <div id="manual3">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -105,13 +112,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual4" checked>
+              <input type="checkbox" id="showManual4">
               <span class="slider round"></span>
             </label>
             <div id="manual4">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -122,13 +129,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual5" checked>
+              <input type="checkbox" id="showManual5">
               <span class="slider round"></span>
             </label>
             <div id="manual5">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -145,13 +152,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual6" checked>
+              <input type="checkbox" id="showManual6">
               <span class="slider round"></span>
             </label>
             <div id="manual6">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -162,13 +169,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual7" checked>
+              <input type="checkbox" id="showManual7">
               <span class="slider round"></span>
             </label>
             <div id="manual7">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -180,13 +187,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual8" checked>
+              <input type="checkbox" id="showManual8">
               <span class="slider round"></span>
             </label>
             <div id="manual8">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -197,13 +204,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual9" checked>
+              <input type="checkbox" id="showManual9">
               <span class="slider round"></span>
             </label>
             <div id="manual9">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -220,13 +227,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual10" checked>
+              <input type="checkbox" id="showManual10">
               <span class="slider round"></span>
             </label>
             <div id="manual10">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -237,13 +244,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual11" checked>
+              <input type="checkbox" id="showManual11">
               <span class="slider round"></span>
             </label>
             <div id="manual11">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -255,13 +262,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual12" checked>
+              <input type="checkbox" id="showManual12">
               <span class="slider round"></span>
             </label>
             <div id="manual12">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -272,13 +279,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual13" checked>
+              <input type="checkbox" id="showManual13">
               <span class="slider round"></span>
             </label>
             <div id="manual13">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -295,13 +302,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual14" checked>
+              <input type="checkbox" id="showManual14">
               <span class="slider round"></span>
             </label>
             <div id="manual14">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -312,13 +319,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual15" checked>
+              <input type="checkbox" id="showManual15">
               <span class="slider round"></span>
             </label>
             <div id="manual15">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -330,13 +337,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual16" checked>
+              <input type="checkbox" id="showManual16">
               <span class="slider round"></span>
             </label>
             <div id="manual16">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -347,13 +354,13 @@
           <div class="card-body">
             <h5>Automated:</h5>
             <label class="switch">
-              <input type="checkbox" id="showManual17" checked>
+              <input type="checkbox" id="showManual17">
               <span class="slider round"></span>
             </label>
             <div id="manual17">
               <h5>Manual mode:</h5>
               <label class="switch">
-                <input type="checkbox" checked>
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -364,7 +371,26 @@
     </div>
   </div>
 
+  <!-- modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+          <br><br>
+          <h1>Modal with blur effect</h1>
+          <h2>Put here whatever you want here</h2>
+          <h4>For instance, a login form or an article content</h4>
+          <h4><kbd>esc</kbd> or click anyway to close</h4>
+          <hr>
+          <div class="alert alert-danger">
+            <h4>You can add any html and css ;)</h4>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  
 </body>
 <footer class="bg-white">
   <div class="container py-3">
@@ -376,21 +402,10 @@
     </ul>
   </div>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs="
-  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"
+  integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
 <script src="./scripts/browser-mqtt.js"></script>
 <script src="./scripts/controller.js"></script>
 <script src="scripts/onclick.js"></script>
 
 </html>
-<script>
-  var inc = 1
-  var inc2 = 1
-  $(document).ready(function () {
-    for (var i = 0; i < 17; i++) {
-      $('#manual' + inc).hide()
-      ++inc
-    }
-
-  });
-</script>

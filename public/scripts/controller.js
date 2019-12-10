@@ -1,81 +1,54 @@
-var topics = 
-[
- "aspire/device",
-  "hannah-patrick",
-  "elective_c",
-  "rivastibs",
-  "z",
- "lalaine/jake",
- "sensor/tanilonnadela",
- "bargs/jane",
-  "mogal",
- "princechan",
-"group1-temperature",
- "genjess"
-]
-var ids = ["yol","pat","rish","tibs","byang","ling","chervz","yot","lor","twing","burce","jess",]
-
-client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt")
-
+var topic = "sensor/monitoring";
+client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt");
 
 client.on("connect", function () {
   console.log("Successfully connected");
-})
-
-topics.forEach((topic)=>{
-  client.subscribe(topic)
-
 });
+
+client.subscribe("sensor/light", (err) => {
+  if (err) console.log(err)
+  console.log("Subscribed successfully!")
+})
 
 client.on("message", function (topic, payload) {
   var topics = [topic, payload].join(": ")
+  console.log(topics)
+  if (payload > 500) {      //see if the payload exceeds 500
+    $('#alert').show();
+  }else{
+    $('#alert').hide();
+  }
+});
 
-  if(topic=="sensor/tanilonnadela"){
-    $('#chervz').text(payload);
-    console.log(topic)
+$("#manualC").click(function () {
+  if ($(this).prop("checked") == true) {
+    clearInterval(onAutomatic);
+    publisher("on");    //publish on status to broker
+  } else {
+    clearInterval(onAutomatic);
+    publisher("off");   //publish off status to broker
   }
-if(topic=="aspire/device"){
-    $('#yol').text(payload);
-    console.log(topic)
+});
+
+var onAutomatic;
+$("#showManual1").on("click", function () {
+  if ($(this).prop("checked") == true) {      //send looping publisher to broker
+    onAutomatic = setInterval(doStuff, 1000);
+    function doStuff() {
+      publisher("on automatic")
+    }
+  } else {
+    clearInterval(onAutomatic);     //dont do anything except this one
+    console.log("off automatic")
   }
-  if(topic=="hannah-patrick"){
-    $('#pat').text(payload);
-    console.log(topic)
-  }
-  if(topic=="elective_c"){
-    $('#rish').text(payload);
-    console.log(topic)
-  }
-  if(topic=="rivastibs"){
-    $('#tibs').text(payload);
-    console.log(topic)
-  }
-  if(topic=="z"){
-    $('#byang').text(payload);
-    console.log(topic)
-  }
-  if(topic=="lalaine/jake"){
-    $('#ling').text(payload);
-    console.log(topic)
-  }
-  if(topic=="princechan"){
-    $('#twing').text(payload);
-    console.log(topic)
-  }
-  if(topic=="mogal"){
-    $('#lor').text(payload);
-    console.log(topic)
-  }
-  if(topic=="bargs/jane"){
-    $('#yot').text(payload);
-    console.log(topic)
-  }
-  if(topic=="genjess"){
-    $('#jess').text(payload);
-    console.log(topic)
-  }
-  if(topic=="group1-temperature"){
-    $('#burce').text(payload);
-    console.log(topic)
-  }
-})
+});
+
+function publisher(payload) {
+  client.publish(topic, payload, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`Publish ${payload}`);
+    }
+  });
+}
