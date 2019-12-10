@@ -29,10 +29,6 @@ $("#showManual1").on("click", function () {
   }
 });
 
-function sleep(time) {
-  return new Promise(resolve => setTimeout(resolve, time));
-}
-
 function publisher(payload) {
     // client.publish(topic, payload, err => {
     //   if (err) {
