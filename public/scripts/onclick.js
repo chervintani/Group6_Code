@@ -2,9 +2,6 @@ $(document).ready(function () {
 
     $('#showManual1').click(function () {
         $('#manual1').toggle();
-        console.log($('#showManual1').val())
-        
-
     });
 
     
