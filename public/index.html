@@ -18,8 +18,10 @@
   <!-- Image and text -->
   <nav class="navbar navbar-dark bg-primary sticky-top">
     <a href="#" id="header">
-      <h2><img src="https://www.passerellesnumeriques.org/wp-content/uploads/2016/03/pn-logo.png" style="width:60px">
-        &nbsp;<b>Automated Light Switch</h2>
+      <h2>
+        <img src="https://www.passerellesnumeriques.org/wp-content/uploads/2016/03/pn-logo.png" style="width:60px">
+        &nbsp;<b>Automated Light Switch
+      </h2>
     </a>
   </nav>
   <div class="jumbotron text-center">
@@ -34,10 +36,9 @@
         </div>
       </div>
     </center><br>
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-primary" role="alert">
       <i>Note: </i>You can turn off automated to manually operate the light switch in case of emergency.
     </div>
-
     <div class="container">
       <center><br>
         <div class="card" id="card">
@@ -47,6 +48,9 @@
           </div>
         </div>
       </center><br>
+      <div class="alert alert-danger" role="alert" id="alert">
+          Room <span id="roomAlert">C#</span> light is open!
+        </div>
       <div class="row" id="blockTitle">
         <h3><b>Block 1</b></h3>
       </div>
@@ -367,7 +371,26 @@
     </div>
   </div>
 
+  <!-- modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+          <br><br>
+          <h1>Modal with blur effect</h1>
+          <h2>Put here whatever you want here</h2>
+          <h4>For instance, a login form or an article content</h4>
+          <h4><kbd>esc</kbd> or click anyway to close</h4>
+          <hr>
+          <div class="alert alert-danger">
+            <h4>You can add any html and css ;)</h4>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  
 </body>
 <footer class="bg-white">
   <div class="container py-3">

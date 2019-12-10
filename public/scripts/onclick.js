@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    
+    $('#alert').hide();
 
     $('#showManual1').click(function () {
         $('#manual1').toggle();

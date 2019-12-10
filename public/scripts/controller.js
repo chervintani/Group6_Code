@@ -5,6 +5,20 @@ client.on("connect", function () {
   console.log("Successfully connected");
 });
 
+client.subscribe("sensor/light", (err) => {
+  if (err) console.log(err)
+  console.log("Subscribed successfully!")
+})
+
+client.on("message", function (topic, payload) {
+  var topics = [topic, payload].join(": ")
+  console.log(topics)
+  if (payload > 500) {      //see if the payload exceeds 500
+    $('#alert').show();
+  }else{
+    $('#alert').hide();
+  }
+});
 
 $("#manualC").click(function () {
   if ($(this).prop("checked") == true) {
@@ -19,7 +33,7 @@ $("#manualC").click(function () {
 var onAutomatic;
 $("#showManual1").on("click", function () {
   if ($(this).prop("checked") == true) {      //send looping publisher to broker
-    onAutomatic = setInterval(doStuff, 1000); 
+    onAutomatic = setInterval(doStuff, 1000);
     function doStuff() {
       publisher("on automatic")
     }
@@ -30,11 +44,11 @@ $("#showManual1").on("click", function () {
 });
 
 function publisher(payload) {
-    client.publish(topic, payload, err => {
-      if (err) {
-        console.log(err);
-      } else {
-    console.log(`Publish ${payload}`);
-      }
-    });
+  client.publish(topic, payload, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`Publish ${payload}`);
+    }
+  });
 }
