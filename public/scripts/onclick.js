@@ -2,8 +2,12 @@ $(document).ready(function () {
 
     $('#showManual1').click(function () {
         $('#manual1').toggle();
+        console.log($('#showManual1').val())
+        
+
     });
 
+    
     $('#showManual2').click(function () {
         $('#manual2').toggle();
     });
