@@ -1,5 +1,5 @@
 var topic = "sensor/monitoring";
-client = mqtt.connect("mqtt://test.mosquitto.org:8081/mqtt");
+client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt");
 
 client.on("connect", function () {
   console.log("Successfully connected");
@@ -30,11 +30,11 @@ $("#showManual1").on("click", function () {
 });
 
 function publisher(payload) {
-    // client.publish(topic, payload, err => {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
+    client.publish(topic, payload, err => {
+      if (err) {
+        console.log(err);
+      } else {
     console.log(`Publish ${payload}`);
-    //   }
-    // });
+      }
+    });
 }
