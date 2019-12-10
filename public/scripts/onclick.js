@@ -1,11 +1,25 @@
 $(document).ready(function () {
     
+  
+
+    $('#logout').click(function(){
+        location.href="http://localhost:8080"
+    })
+
     $('#alert').hide();
 
+    //C# SHOW MANUAL BUTTON 
     $('#showManual1').click(function () {
         $('#manual1').toggle();
     });
 
+    //C# MANUAL BUTTON ONCLICK
+    $('#manualC').click(function(){
+        $(this).attr("disabled", "disabled")
+        setTimeout(function() {
+            $("#manualC").removeAttr("disabled");      
+        }, 3000);
+    })
     
     $('#showManual2').click(function () {
         $('#manual2').toggle();

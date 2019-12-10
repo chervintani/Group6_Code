@@ -1,411 +1,51 @@
-<html>
-
 <head>
-  <title>ChervMOWS</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
-    id="bootstrap-css">
-  <script src="https://kit.fontawesome.com/a1813e4a30.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-  <link rel="icon" href="src/logo.png" type="image/gif" sizes="16x16">
-  <link href="src/style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="src/main.css" rel="stylesheet">
 </head>
 
-
 <body>
-  <!-- Image and text -->
-  <nav class="navbar navbar-dark bg-primary sticky-top">
-    <a href="#" id="header">
-      <h2>
-        <img src="https://www.passerellesnumeriques.org/wp-content/uploads/2016/03/pn-logo.png" style="width:60px">
-        &nbsp;<b>Automated Light Switch
-      </h2>
-    </a>
-  </nav>
-  <div class="jumbotron text-center">
-    <h5>Powered by:</h5>
-    <img src="https://mosquitto.org/images/mosquitto-text-side-28.png" border="0" alt="Null">
-    <br><br>
-    <center>
-      <div class="card">
-        <div class="card-body">
-          This application is an automated light switch with light detector, where it has features <br>of turning off a
-          light automatically if the light sensor detects a light.
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first"><br>
+                <img src="https://www.passerellesnumeriques.org/wp-content/uploads/2016/03/pn-logo.png" style="height:100px;width:auto"
+                    id="icon" alt="User Icon" />
+                <br><br>
+                <h3>Automated Light Switch</h3>
+            </div>
+            <!-- Login Form -->
+            <form>
+                <input type="text" id="username" class="fadeIn second" name="login" placeholder="Username" required>
+                <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" required><br>
+            </form>
+            <center><button class="login100-form-btn" type="button" id="login">
+                    <h5>login</h5>
+                </button>
+            </center><br>
         </div>
-      </div>
-    </center><br>
-    <div class="alert alert-primary" role="alert">
-      <i>Note: </i>You can turn off automated to manually operate the light switch in case of emergency.
     </div>
-    <div class="container">
-      <center><br>
-        <div class="card" id="card">
-          <div class="card-header" style="background: #39ad39; color: white">Educator's Office</div>
-          <div class="card-body">
-            <h5>Educator in charge</h5>
-          </div>
-        </div>
-      </center><br>
-      <div class="alert alert-danger" role="alert" id="alert">
-          Room <span id="roomAlert">C#</span> light is open!
-        </div>
-      <div class="row" id="blockTitle">
-        <h3><b>Block 1</b></h3>
-      </div>
-      <div class="row" id="block1">
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">C#</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual1" value="C#">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual1">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox" id="manualC" value="manual C#">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Seed</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual2">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual2">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Fortran</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual3">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual3">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="w-100"></div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Elixir</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual4">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual4">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Ubercode</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual5">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual5">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row" id="blockTitle">
-        <h3><b>Block 2</b></h3>
-      </div>
-      <div class="row" id="block2">
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Haiku</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual6">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual6">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Trojan</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual7">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual7">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="w-100"></div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Fedora</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual8">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual8">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Bash</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual9">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual9">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row" id="blockTitle">
-        <h3><b>Block 3</b></h3>
-      </div>
-      <div class="row" id="block3">
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Solaris</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual10">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual10">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Zapier</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual11">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual11">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="w-100"></div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Macintosh</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual12">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual12">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Oracle</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual13">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual13">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row" id="blockTitle">
-        <h3><b>Block 4</b></h3>
-      </div>
-      <div class="row" id="block4">
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Xamarin</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual14">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual14">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Sympl</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual15">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual15">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="w-100"></div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">QT Script</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual16">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual16">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-header" style="background: #428eff; color: white">Lynx</div>
-          <div class="card-body">
-            <h5>Automated:</h5>
-            <label class="switch">
-              <input type="checkbox" id="showManual17">
-              <span class="slider round"></span>
-            </label>
-            <div id="manual17">
-              <h5>Manual mode:</h5>
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
-          <br><br>
-          <h1>Modal with blur effect</h1>
-          <h2>Put here whatever you want here</h2>
-          <h4>For instance, a login form or an article content</h4>
-          <h4><kbd>esc</kbd> or click anyway to close</h4>
-          <hr>
-          <div class="alert alert-danger">
-            <h4>You can add any html and css ;)</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
 </body>
-<footer class="bg-white">
-  <div class="container py-3">
-    <ul class="list-inline text-center">
-      <li class="list-inline-item lead"><b>Created by: Chervz@2021</b></li><br>
-      <li class="list-inline-item"><a href="https://passerellesnumeriques.org">
-          <h5> Passerelles Numeriques Philippines</h5>
-        </a></li>
-    </ul>
-  </div>
-</footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"
-  integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
-<script src="./scripts/browser-mqtt.js"></script>
-<script src="./scripts/controller.js"></script>
-<script src="scripts/onclick.js"></script>
+<script>
+    $("#login").click(function () {
+        if ($("#username").val() == "" && $("#password").val() == "") {
+            swal({
+                icon: "error",
+                text: "Please all the fields!"
+            });
+        } else {
+            if ($("#username").val() == "admin" && $("#password").val() == "admin") {
+                window.location.href = "http://localhost:8080/home.html";
+            } else {
+                swal({
+                    icon: "error",
+                    text: "Incorrect username or password!",
+                });
+            }
+        }
+    })
 
-</html>
+</script>

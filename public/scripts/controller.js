@@ -12,7 +12,7 @@ client.subscribe("sensor/light", (err) => {
 
 client.on("message", function (topic, payload) {
   var topics = [topic, payload].join(": ")
-  console.log(topics)
+  // console.log(topics)
   if (payload > 500) {      //see if the payload exceeds 500
     $('#alert').show();
   }else{
@@ -35,7 +35,7 @@ $("#showManual1").on("click", function () {
   if ($(this).prop("checked") == true) {      //send looping publisher to broker
     onAutomatic = setInterval(doStuff, 1000);
     function doStuff() {
-      publisher("on automatic")
+      publisher("auto")
     }
   } else {
     clearInterval(onAutomatic);     //dont do anything except this one
