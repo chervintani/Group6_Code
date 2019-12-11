@@ -7,6 +7,7 @@ $(document).ready(function () {
     })
 
     $('#alert').hide();
+    $('#alert2').hide();
 
     //C# SHOW MANUAL BUTTON 
     $('#showManual1').click(function () {
@@ -21,6 +22,13 @@ $(document).ready(function () {
         }, 3000);
     })
     
+    //SEED MANUAL BUTTON ONCLICK
+    $('#manualSeed').click(function(){
+        $(this).attr("disabled", "disabled")
+        setTimeout(function() {
+            $("#manualSeed").removeAttr("disabled");      
+        }, 3000);
+    })
     $('#showManual2').click(function () {
         $('#manual2').toggle();
     });
