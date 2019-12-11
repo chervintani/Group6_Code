@@ -29,6 +29,7 @@ $(document).ready(function () {
             $("#manualSeed").removeAttr("disabled");      
         }, 3000);
     })
+
     $('#showManual2').click(function () {
         $('#manual2').toggle();
     });
