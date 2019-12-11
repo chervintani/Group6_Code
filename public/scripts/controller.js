@@ -24,11 +24,9 @@ client.on("message", function (topic, payload) {
     } else {
       $('#alert').hide();
     }
-    // console.log(topic)
   }
   if (topic == "sensor/light2") {
     console.log(topic)
-    // console.log(topics)
     if (payload > 150) {      //see if the payload exceeds 500
       $('#alert2').show();
     } else {
@@ -61,7 +59,6 @@ $("#showManual1").on("click", function () {
     }
   } else {
     clearInterval(onAutomatic);     //dont do anything except this one
-    // clearInterval(onAutomatic2);     //dont do anything except this one
     console.log("off automatic")
   }
 });
@@ -85,7 +82,6 @@ $("#showManual2").on("click", function () {
       publisher(topic2,"auto")
     }
   } else {
-    // clearInterval(onAutomatic);     //dont do anything except this one
     clearInterval(onAutomatic2);     //dont do anything except this one
     console.log("off automatic")
   }
